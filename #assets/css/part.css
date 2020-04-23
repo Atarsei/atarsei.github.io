@@ -1,0 +1,4 @@
+#nav {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color:#5d6474;position: fixed; right: 25px}
+#nav li{float: right;}
+#nav li a{color:#d0d3da; display: inline-block;text-decoration: none;padding: 16px;}
+
