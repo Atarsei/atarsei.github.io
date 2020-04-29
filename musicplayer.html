@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>music</title>
+</head>
+
+<body>
+<div id="list"></div>
+
+<script>
+    let data = [
+        {name:"年少有为", id:"1293886117"},
+        {name:"下山", id:"1404885266"}
+        ];
+    let list = document.getElementById("list");
+    data.forEach(function(song){
+        let audio = document.createElement("audio");
+        audio.setAttribute("controls","autoplay" )
+        let source = document.createElement("source");
+        source.setAttribute("src", `http://music.163.com/song/media/outer/url?id=${song.id}.mp3`);
+        audio.appendChild(source);
+        list.appendChild(audio);
+    });
+</script>
+</body>
+</html>
