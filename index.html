@@ -1,30 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>任意的小站</title>
-<link rel="stylesheet" type="text/css" href="assets/css/Module.css">
-<style>
-	body {margin:0;width:100%}
-	.content {overflow: hidden;background-color: #5D6474;letter-spacing:20px;font-size: 50px;color:#d0d3da}
-</style>
+  <meta charset="UTF-8">
+  <title>任意的小站</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/Module.css">
+  <style>
+    body {
+      margin: 0;
+      width: 100%
+    }
+
+    .content {
+      overflow: hidden;
+      background-color: #5D6474;
+      letter-spacing: 20px;
+      font-size: 50px;
+      color: #d0d3da
+    }
+  </style>
 </head>
 
 <body style="background-color: #5D6474">
-  <div class="topmeau">
-    <ul >
-      <li><a href="about/"><b>关于</b></a></li>
-      <li><a href="article/"><b>文章</b></a></li>
-      <li><a href="route/"><b>日常</b></a></li>
-      <li><a href="https://atarsei.github.io/"><b>首页</b></a></li>
-      <li><a href="coverpage/"><b>封面</b></a></li>
-      </ul>
-    </div>
-	<div class="content">
-		<br>
-                <br><br><br>
-		<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“当时她还年轻，不知道所有命运的馈赠，都已在暗中标下价码”</b><br>
-		<i style="position:relative;left:250px">-4.20</i><br><br><br><br>
-	</div>
+  <div class="topmeau"></div>
+  <iframe name="nav" src="assets/Module/nav.html" style="display: none"></iframe>
+  <script type="text/javascript">
+    window.onload = function () {
+      function getFrame(frameName, ) {
+        return window.frames["nav"].document;
+      }
+      var nav = getFrame('nav').getElementsByClassName('topmeau')[0].innerHTML;
+      var topmeau = document.getElementsByClassName('topmeau')[0];
+      topmeau.innerHTML = nav;
+    }
+  </script>
+  <div class="content">
+    <br>
+    <br><br><br>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“当时她还年轻，不知道所有命运的馈赠，都已在暗中标下价码”</b><br>
+    <i style="position:relative;left:250px">-4.20</i><br><br><br><br>
+  </div>
 </body>
+
 </html>
