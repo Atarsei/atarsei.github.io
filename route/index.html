@@ -4,18 +4,22 @@
 <meta charset="utf-8">
 <title>日常</title>
 <link rel="stylesheet" type="text/css" href="../assets/css/Module.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/route.css">
 </head>
 <script type="text/javascript" src="route.json"></script>
-<body>
- 	<div class="topmeau">
-    <ul>
-      <li><a href="https://atarsei.github.io/about"><strong>关于</strong></a></li>
-      <li><a href="https://atarsei.github.io/article"><b>文章</b></a></li>
-      <li><a href="https://atarsei.github.io/route"><b>日常</b></a></li>
-      <li><a href="https://atarsei.github.io/"><b>首页</b></a></li>
-      <li><a href="https://atarsei.github.io/coverpage"><b>封面</b></a></li>
-      </ul>
-	</div>
+<body style="background-color:#5D6474">
+  <div class="topmeau"></div>
+  <iframe name="nav" src="../assets/Module/nav.html" style="display: none"></iframe>
+  <script type="text/javascript">
+    window.onload = function () {
+      function getFrame(frameName, ) {
+        return window.frames["nav"].document;
+      }
+      var nav = getFrame('nav').getElementsByClassName('topmeau')[0].innerHTML;
+      var topmeau = document.getElementsByClassName('topmeau')[0];
+      topmeau.innerHTML = nav;
+    }
+  </script>
 	<div class="route_card">
 		<div class="route_card_top"></div>
 		<div class="route_card_content"></div>
@@ -23,11 +27,21 @@
 	</div>
 	
 <script>
-document.write("<br><br><br><br>");
+document.write("<br><br>");
 var mydata = JSON.parse(data);
 for (var i=0;i< mydata.length;i++)
-{
-document.write(mydata[i].c+"<br>");
+{if (mydata[i].c == "" && mydata[i].p == "") continue
+document.write(
+'<div class="route_card">\
+		<div class="route_card_top">'+
+      mydata[i].y+'.'+mydata[i].m+'.'+mydata[i].d+
+   '</div>'+
+	 '<div class="route_card_content">'+
+    mydata[i].c+
+   '</div>'+
+		'<div class="route_card_bottom"></div>\
+</div>'
+);
 }
 </script>
 </body>
