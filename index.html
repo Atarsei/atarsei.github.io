@@ -5,35 +5,13 @@
   <meta charset="UTF-8">
   <title>任意的小站</title>
   <link rel="stylesheet" type="text/css" href="assets/css/Module.css">
-  <style>
-    body {
-      margin: 0;
-      width: 100%
-    }
-
-    .content {
-      overflow: hidden;
-      background-color: #5D6474;
-      letter-spacing: 20px;
-      font-size: 50px;
-      color: #d0d3da
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/base.css">
 </head>
-
+<script type="text/javascript" src="assets/js/LoadJson.js"></script>
 <body style="background-color: #5D6474">
   <div class="topmeau"></div>
   <iframe name="nav" src="assets/Module/nav.html" style="display: none"></iframe>
-  <script type="text/javascript">
-    window.onload = function () {
-      function getFrame(frameName, ) {
-        return window.frames["nav"].document;
-      }
-      var nav = getFrame('nav').getElementsByClassName('topmeau')[0].innerHTML;
-      var topmeau = document.getElementsByClassName('topmeau')[0];
-      topmeau.innerHTML = nav;
-    }
-  </script>
+  <script>LoadJsonFrame()</script>
   <div class="content">
     <br>
     <br><br><br>
@@ -41,5 +19,4 @@
     <i style="position:relative;left:250px">-4.20</i><br><br><br><br>
   </div>
 </body>
-
 </html>

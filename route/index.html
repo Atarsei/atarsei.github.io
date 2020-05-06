@@ -7,42 +7,11 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/route.css">
 </head>
 <script type="text/javascript" src="route.json"></script>
+<script type="text/javascript" src="../assets/js/LoadJson.js"></script>
 <body style="background-color:#5D6474">
   <div class="topmeau"></div>
   <iframe name="nav" src="../assets/Module/nav.html" style="display: none"></iframe>
-  <script type="text/javascript">
-    window.onload = function () {
-      function getFrame(frameName, ) {
-        return window.frames["nav"].document;
-      }
-      var nav = getFrame('nav').getElementsByClassName('topmeau')[0].innerHTML;
-      var topmeau = document.getElementsByClassName('topmeau')[0];
-      topmeau.innerHTML = nav;
-    }
-  </script>
-	<div class="route_card">
-		<div class="route_card_top"></div>
-		<div class="route_card_content"></div>
-		<div class="route_card_bottom"></div>
-	</div>
-	
-<script>
-document.write("<br><br>");
-var mydata = JSON.parse(data);
-for (var i=0;i< mydata.length;i++)
-{if (mydata[i].c == "" && mydata[i].p == "") continue
-document.write(
-'<div class="route_card">\
-		<div class="route_card_top">'+
-      mydata[i].y+'.'+mydata[i].m+'.'+mydata[i].d+
-   '</div>'+
-	 '<div class="route_card_content">'+
-    mydata[i].c+
-   '</div>'+
-		'<div class="route_card_bottom"></div>\
-</div>'
-);
-}
-</script>
+  <script>LoadJsonFrame()</script>	
+  <script>LoadJsonWrite()</script>
 </body>
 </html>
