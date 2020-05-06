@@ -4,7 +4,7 @@ function LoadJsonWrite()
     var mydata = JSON.parse(data);
     for (var i = 0; i < mydata.length; i++) {
         var pics ="";
-        if (mydata[i].p != ""){pics="<img src ="+mydata[i].p.split(',')[0]+"></img>"};
+        if (mydata[i].p != ""){pics="<img src ="+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"></img>"};
         if (mydata[i].c == "" && mydata[i].p == "") continue
         document.write(
             '<div class="route_card">\
