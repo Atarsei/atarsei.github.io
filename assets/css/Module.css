@@ -1,7 +1,6 @@
 body {margin:0;padding: 0; width:100%;}
-.topmeau {overflow:hidden; }
-.topmeau ul{overflow: hidden;margin: 0;padding: 0;width: 100%;background:#5d6474;position: fixed}
-.topmeau li{list-style-type: none;float: right;background-color:#5d6474;position: relative;right:10px}
+.topmeau {overflow:hidden;}
+.topmeau ul{overflow: hidden;margin: 0;padding: 0;width: 100%;background:#585f6f;position: fixed;}
+.topmeau li{list-style-type: none;float: right;background-color:#585f6f;position: relative;right:10px}
 .topmeau  li a{color:#d0d3da; display: inline-block;text-decoration: none;padding: 20px;}
 .topmeau li :hover{background-color:#9194A5}
-.topmeau li :active{background-color: #5E6575}
