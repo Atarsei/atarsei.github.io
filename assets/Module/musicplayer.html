@@ -26,7 +26,7 @@
     </div>
     <div class="icon">
         <i class="fa fa-pause" onclick= "PlayAndPause(this)"></i>
-        <i class="fa fa-reorder" onclick="PlayMode(this)"></i>
+        <i class="fa fa-random" onclick="PlayMode(this)"></i>
         <i class="fa fa-step-forward" onclick="NEXT()"></i>
         <i class="fa fa-volume-up" onclick="Voice(this)"></i>
     </div>
@@ -35,13 +35,61 @@
 
 <script>
 var list =[
-    {name:"Italo Disco",id:"1351384773"},
-    {name:"materia",id:"554244342"},
-    {name:"SLOW DANCING IN THE DARK",id:"1308778228"},
-    {name:"Late Night",id:"512613909"}
+{name:"Italo Disco",id:"1351384773"},
+{name:"Waited All Summer",id:"1309433426"},
+{name:"Late Night",id:"512613909"},
+{name:"materia",id:"554244342"},
+{name:"RIP",id:"1313102149"},
+{name:"SLOW DANCING IN THE DARK",id:"1308778228"},
+{name:"Lie Low",id:"431855442"},
+{name:"You Got Me Like",id:"1300939626"},
+{name:"ILY",id:"1345707604"},
+{name:"Let It Pass",id:"485775554"},
+{name:"All Your Love",id:"485775555"},
+{name:"Another One #2",id:"865048099"},
+{name:"Let Go",id:"1333336513"},
+{name:"Prettiest Virgin",id:"451981343"},
+{name:"On The Move",id:"17947009"},
+{name:"This Love",id:"1783468"},
+{name:"Head Out",id:"424995413"},
+{name:"Not Enough",id:"527520157"},
+{name:"Homage",id:"424995410"},
+{name:"I Don't Know Why ",id:"412785402"},
+{name:"You're All That I Need",id:"1325898782"},
+{name:"Sweet Bird",id:"26509205"},
+{name:"Special to Me",id:"2207035"},
+{name:"Open Your Eyes",id:"16813253"},
+{name:"Real Love",id:"26740183"},
+{name:"Angels",id:"1300452757"},
+{name:"Kokopelli",id:"424995414"},
+{name:"Sex, Love & Water",id:"534541195"},
+{name:"Angel Disco Love - (天使爱人)",id:"538610028"},
+{name:"I Can't Stop",id:"26936976"},
+{name:"Love Won't Let Me Wait",id:"17115678"},
+{name:"Tripoli",id:"3229858"},
+{name:"Need To Know",id:"484732646"},
+{name:"Found Your Love",id:"34899626"},
+{name:"Easy Lover",id:"412268350"},
+{name:"Let's Stay Together",id:"5057818"},
+{name:"Me & You ◑",id:"1304405633"},
+{name:"All Eyes On Us",id:"416531609"},
+{name:"After the Moment",id:"17121111"},
+{name:"Disco Yes",id:"544739911"},
+{name:"Promise",id:"1308782023"},
+{name:"Little Lady",id:"2645763"},
+{name:"September",id:"431534673"},
+{name:"Sparks",id:"17177277"},
+{name:"Suit & Tie",id:"25706364"},
+{name:"Rock With You",id:"1697520"},
+{name:"3 AM",id:"401250036"},
+{name:"Habit",id:"1334055306"},
+{name:"Chartreuse",id:"26429356"},
+{name:"Baby I'm Yours",id:"26857440"},
+{name:"Blossom (Lenno Remix)",id:"1299570462"},
+{name:"South Of France",id:"537936060"},
 ];
 var num=-1;
-var Mode="InOrder";
+var Mode="Random";
 var audio=document.createElement("audio");
 audio.volume=0.7
 audio.setAttribute("autoplay",true);
@@ -75,10 +123,10 @@ function Voice(id)
 }
 function PlayMode(id)
 {
-    if (id.className=="fa fa-reorder")
-    {id.className="fa fa-random";Mode="Random"}
-    else
+    if (id.className=="fa fa-random")
     {id.className="fa fa-reorder";Mode="InOrder"}
+    else
+    {id.className="fa fa-random";Mode="Random"}
 }
 /* random number */
 function getRndInteger(min, max) {
