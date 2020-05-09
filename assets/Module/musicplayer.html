@@ -92,7 +92,7 @@ audio.volume=0.7;
 audio.setAttribute("autoplay",true);
 audio.setAttribute("controls",true);
 NEXT();
-document.onload = audio.play()
+window.onload = function(){if(true){audio.play()}}
 audio.onended = function(){NEXT()};
 
 function NEXT()
