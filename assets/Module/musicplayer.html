@@ -65,20 +65,17 @@ var list =[
 {name:"Sex, Love & Water",id:"534541195"},
 {name:"Angel Disco Love - (天使爱人)",id:"538610028"},
 {name:"I Can't Stop",id:"26936976"},
-{name:"Love Won't Let Me Wait",id:"17115678"},
 {name:"Tripoli",id:"3229858"},
 {name:"Need To Know",id:"484732646"},
 {name:"Found Your Love",id:"34899626"},
 {name:"Easy Lover",id:"412268350"},
 {name:"Let's Stay Together",id:"5057818"},
-{name:"Me & You ◑",id:"1304405633"},
 {name:"All Eyes On Us",id:"416531609"},
 {name:"After the Moment",id:"17121111"},
 {name:"Disco Yes",id:"544739911"},
 {name:"Promise",id:"1308782023"},
 {name:"Little Lady",id:"2645763"},
 {name:"September",id:"431534673"},
-{name:"Sparks",id:"17177277"},
 {name:"Suit & Tie",id:"25706364"},
 {name:"Rock With You",id:"1697520"},
 {name:"3 AM",id:"401250036"},
@@ -95,6 +92,7 @@ audio.volume=0.7;
 audio.setAttribute("autoplay",true);
 audio.setAttribute("controls",true);
 NEXT();
+document.onload = audio.play()
 audio.onended = function(){NEXT()};
 
 function NEXT()
