@@ -2,26 +2,91 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>music</title>
+<title>musicplayer</title>
+<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+    body{background-color: rgba(255, 255, 255, 0);}
+    i{color: #d0d3da;}
+    .contain {position: absolute;right: 1%;}
+    .text {position: absolute;right: 60px;width: 200px;color: #d0d3da}
+    .text div{position:absolute;top:0;width:100px;right:20px;overflow: hidden;white-space:nowrap;}
+    #name {animation:move 7s linear infinite;position: relative;width: 10000px;}
+    @keyframes move{
+        0%{right:-150px}
+        100%{right:150px}
+    }
+</style>
 </head>
 
 <body>
-<div id="list"></div>
+<div class="contain">
+    <div class="text">
+        <b>正在播放:</b>
+        <div><span id="name"></span></div>  
+    </div>
+    <div class="icon">
+        <i class="fa fa-pause" onclick= "PlayAndPause(this)"></i>
+        <i class="fa fa-reorder" onclick="PlayMode(this)"></i>
+        <i class="fa fa-step-forward" onclick="NEXT()"></i>
+        <i class="fa fa-volume-up" onclick="Voice(this)"></i>
+    </div>
+
+</div>
 
 <script>
-    let data = [
-        {name:"年少有为", id:"1293886117"},
-        {name:"下山", id:"1404885266"}
-        ];
-    let list = document.getElementById("list");
-    data.forEach(function(song){
-        let audio = document.createElement("audio");
-        audio.setAttribute("controls","autoplay" )
-        let source = document.createElement("source");
-        source.setAttribute("src", `http://music.163.com/song/media/outer/url?id=${song.id}.mp3`);
-        audio.appendChild(source);
-        list.appendChild(audio);
-    });
+var list =[
+    {name:"Italo Disco",id:"1351384773"},
+    {name:"materia",id:"554244342"},
+    {name:"SLOW DANCING IN THE DARK",id:"1308778228"},
+    {name:"Late Night",id:"512613909"}
+];
+var num=-1;
+var Mode="InOrder";
+var audio=document.createElement("audio");
+audio.volume=0.7
+audio.setAttribute("autoplay",true);
+audio.setAttribute("controls",true);
+NEXT();
+audio.onended = function(){NEXT()};
+
+function NEXT()
+{
+    if (Mode=="Random")
+    {num = getRndInteger(0, list.length-1)}
+    else if(Mode=="InOrder")
+    {num++;if(num>=list.length){num=0}};
+    audio.src = 'http://music.163.com/song/media/outer/url?id='+list[num].id+'.mp3';
+    document.getElementById("name").innerHTML=list[num].name
+}
+
+function PlayAndPause(id)
+{
+    if (id.className=="fa fa-pause")
+    {id.className="fa fa-play";audio.pause()}
+    else
+    {id.className="fa fa-pause";audio.play()}
+}
+function Voice(id)
+{
+    if (id.className=="fa fa-volume-up")
+    {id.className="fa fa-volume-off";audio.volume=0}
+    else
+    {id.className="fa fa-volume-up";audio.volume=0.7}
+}
+function PlayMode(id)
+{
+    if (id.className=="fa fa-reorder")
+    {id.className="fa fa-random";Mode="Random"}
+    else
+    {id.className="fa fa-reorder";Mode="InOrder"}
+}
+/* random number */
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+
+
 </script>
 </body>
 </html>
