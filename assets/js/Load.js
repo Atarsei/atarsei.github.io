@@ -37,6 +37,11 @@ function LoadHtmlWrite(filename,classname)
     outside = outside_div.getElementsByClassName(classname)[0].outerHTML;
     var inside = document.getElementsByClassName(classname)[0];
     inside.outerHTML = outside;
+    var web=location.protocol+"//"+location.hostname;
+    var childname=["about","article","route","coverpage"];
+    document.getElementById("home").href=web;
+    for (i in childname)
+    {document.getElementById(childname[i]).href=web+"/"+childname[i]};
 }
 function LoadFrame()/* Out Of Time   <iframe name="nav" src="../assets/Module/nav.html" style="display: none"></iframe>*/
 {

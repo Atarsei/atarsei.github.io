@@ -101,6 +101,21 @@ if(!LAppDelegate.getInstance()._view)
     LAppDelegate.getInstance()._view.onTouchesBegan(posX, posY);
     LAppDelegate.getInstance()._view.onTouchesEnded(posX, posY);
 },false);
+    //添加鼠标点击事件
+//监听全局的鼠标点击事件，使用document的话，在用户点击页面时，看板娘会不再看向鼠标，直到再次移动
+document.addEventListener("click",function(e){       
+	if(!LAppDelegate.getInstance()._view){
+   		LAppPal.printLog("view notfound");
+    	return;
+    }
+    let rect =  canvas.getBoundingClientRect();
+    let posX: number = e.clientX -rect.left;
+    let posY: number = e.clientY - rect.top ;
+    //其实就是照抄上面的，把下面两行代码加上
+    LAppDelegate.getInstance()._view.onTouchesBegan(posX, posY);
+    LAppDelegate.getInstance()._view.onTouchesEnded(posX, posY);       
+},false);
+
 
     // glコンテキストを初期化
     // @ts-ignore
@@ -137,12 +152,12 @@ if(!LAppDelegate.getInstance()._view)
       canvas.ontouchmove = onTouchMoved;
       canvas.ontouchend = onTouchEnded;
       canvas.ontouchcancel = onTouchCancel;
-    } else {
+    } /* else {
       // マウス関連コールバック関数登録
       canvas.onmousedown = onClickBegan;
       canvas.onmousemove = onMouseMoved;
       canvas.onmouseup = onClickEnded;
-    }
+    } */
 
     // AppViewの初期化
     this._view.initialize();

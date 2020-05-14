@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<all>
+    <article>
+        <title></title>
+        <summary></summary>
+        <label></label>
+        <date>
+            <year></year>
+            <month></month>
+            <day></day>
+        </date>
+    </article>
+</all>
