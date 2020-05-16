@@ -7,9 +7,10 @@
 <style>
     body{background-color: rgba(255, 255, 255, 0);}
     i{color: #d0d3da;}
-    .contain {position: absolute;right: 1%;}
-    .text {position: absolute;right: 70px;width: 200px;color: #d0d3da}
+    .contain {position: absolute;right: 1%;text-shadow:0px 0px 4px  #a5a8af;}
+    .text {position: absolute;right: 70px;width: 200px;color: #d0d3da;}
     .text div{position:absolute;top:0;width:100px;right:20px;overflow: hidden;white-space:nowrap;}
+    .text::after{content:attr(background-color);filter: blur(10px);width: 100px;height: 100px;}
     #name {animation:move 7s linear infinite;position: relative;width: 10000px;}
     @keyframes move{
         0%{right:-150px}

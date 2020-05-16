@@ -1,3 +1,9 @@
-body {margin: 0;width: 100%;background-color:#5D6474}
+body {margin: 0;width: 100%;background-color:#5e6578}
 .content {overflow: hidden;letter-spacing: 20px;
 font-size: 50px;color: #d0d3da}
+.topmeau {overflow:hidden;}
+.topmeau ul{overflow: hidden;margin: 0;padding: 0;width: 100%;background:#585f6f;position: fixed;z-index: 10;box-shadow:5px 5px 10px #4d5361;}
+.topmeau li{list-style-type: none;float: right;background-color:#585f6f;position: relative;right:10px}
+.topmeau  li a{color:#d0d3da; display: inline-block;text-decoration: none;padding: 20px;}
+.topmeau li :hover{background-color:#9194A5}
+::-webkit-scrollbar{display:none;}
