@@ -51,3 +51,16 @@ function LoadFrame()/* Out Of Time   <iframe name="nav" src="../assets/Module/na
         topmeau.innerHTML = nav;
       }
 }
+
+function PhotoStatus()
+{
+    var imgs=document.getElementsByTagName('img');
+    imgs[0].onerror=function()
+    {   
+        for (i in imgs)
+        {imgs[i].src=imgs[i].src.replace("gitee","github")}
+    }
+    imgs[0].onerror=null
+}
+
+/* οnerrο */
