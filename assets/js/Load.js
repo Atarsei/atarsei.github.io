@@ -58,9 +58,10 @@ function PhotoStatus()
     imgs[0].onerror=function()
     {   
         for (i in imgs)
-        {imgs[i].src=imgs[i].src.replace("gitee","github")}
-    }
-    imgs[0].onerror=null
+        {imgs[i].src=imgs[i].src.replace("gitee","github");var onetime=true}
+    };
+    if (onetime){imgs[0].onerror=null}
+    
 }
 
 /* οnerrο */
