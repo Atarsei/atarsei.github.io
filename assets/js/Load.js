@@ -12,7 +12,7 @@ function LoadJsonWrite(filename)
     var mydata = JSON.parse(LoadFile(filename));
     for (var i = 0; i < mydata.length; i++) {
         var pics ="";
-        if (mydata[i].p != ""){pics="<img src ="+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"></img>"};
+        if (mydata[i].p != ""){pics="<br><img src ="+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"></img>"};
         if (mydata[i].c == "" && mydata[i].p == "") continue
         document.write(
             '<div class="route_card">\
@@ -52,16 +52,15 @@ function LoadFrame()/* Out Of Time   <iframe name="nav" src="../assets/Module/na
       }
 }
 
-function PhotoStatus()
+function PhotoStatus(tagname='img')
 {
-    var imgs=document.getElementsByTagName('img');
-    imgs[0].onerror=function()
-    {   
-        for (i in imgs)
-        {imgs[i].src=imgs[i].src.replace("gitee","github");var onetime=true}
-    };
-    if (onetime){imgs[0].onerror=null}
-    
+    var imgs=document.getElementsByTagName(tagname);  
+    for (i in imgs)
+    {
+        imgs[i].onerror=function()
+        {
+            imgs[i].src=imgs[i].src.replace("gitee","github");
+            imgs[i].onerror=null
+        }
+    }  
 }
-
-/* οnerrο */
