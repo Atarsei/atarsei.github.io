@@ -11,24 +11,50 @@ function LoadJsonWrite(filename)
     document.write("<br><br><br>");
     var mydata = JSON.parse(LoadFile(filename));
     for (var i = 0; i < mydata.length; i++) {
-        var pics ="";
-        if (mydata[i].p != ""){pics="<br><img src ="+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"></img>"};
-        if (mydata[i].c == "" && mydata[i].p == "") continue
+        if (mydata[i].c == "" && mydata[i].p == "") {continue};
+/*         var pics ="";
+        if (mydata[i].p != ""){pics="<br><img src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"\"></img>"}; */
         document.write(
             '<div class="route_card">\
 		     <div class="route_card_top">'+
-            mydata[i].y + '.' + mydata[i].m + '.' + mydata[i].d +
+            mydata[i].y + '.' + mydata[i].d +
             '</div>' +
             '<div class="route_card_content">' +
-            mydata[i].c +pics+
+            mydata[i].c +pics(mydata,i)+
             '</div>' +
             '<div class="route_card_bottom"></div>\
              </div>'
         );
-    }
-    
+    }   
 }
-
+function pics(mydata,i)/* 附属于上个函数 ，处理图片*/
+{
+    if (mydata[i].p != "")
+    {
+        var pics="";
+        if (mydata[i].p.split(',').length==1)
+        {
+            return "<img class=\"pic1\" src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"\"></img>"
+        }
+        else if(mydata[i].p.split(',').length==2)
+        {
+            for(var x=0;x<2;x++)
+            {
+                pics=pics+"<div class=\"pic2\"><img src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[x]+"\"></img></div>"
+            }
+            return "<div class=\"pic2_con\">"+pics+"</div>"
+        }
+        else
+        {
+            for(var x=0;x<mydata[i].p.split(',').length;x++)
+            {
+                pics=pics+"<div class=\"pic9\"><img src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[x]+"\"></img></div>"
+            }
+            return "<div class=\"pic9_con\">"+pics+"</div>"
+        }
+    }
+    else{return ""}
+}
 function LoadHtmlWrite(filename,classname)
 {
     var outside = LoadFile(filename);
