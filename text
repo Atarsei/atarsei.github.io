@@ -1,0 +1,27 @@
+#分类应该按使用场景，而不是类别
+-C
+-D
+    -software
+        -qq
+        -cloudmusic
+        -steam
+    -file
+        -archive
+        -source
+            -zip
+            -set_up
+        -meme
+            -series
+            -
+            -
+        -material
+            -font
+            -psd
+        -mlp
+            -season1
+            -season2
+            -fim_game
+        -object1
+    -subject1
+    -subject2
+    -download

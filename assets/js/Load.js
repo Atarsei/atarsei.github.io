@@ -85,7 +85,7 @@ function PhotoStatus(tagname='img')
     {
         imgs[i].onerror=function()
         {
-            imgs[i].src=imgs[i].src.replace("gitee","github");
+            imgs[i].src=imgs[i].src.replace("https://atarsei.gitee.io","");
             imgs[i].onerror=null
         }
     }  

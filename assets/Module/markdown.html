@@ -6,10 +6,12 @@
 </head>
 <body>
   <div id="content"></div>
-  <script src="assets\js\node_modules\marked/marked.min.js"></script>
+  <script src="\assets\js\node_modules\marked/marked.min.js"></script>
   <script>
+    var text ='- [ ] article的界面设计\
+    \n- [ ] article的界面设计'
     document.getElementById('content').innerHTML =
-      marked('- [ ] article的界面设计  ');
+      marked(text);
   </script>
 </body>
 </html>
