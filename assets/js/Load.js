@@ -34,7 +34,7 @@ function pics(mydata,i)/* 附属于上个函数 ，处理图片*/
         var pics="";
         if (mydata[i].p.split(',').length==1)
         {
-            return "<img class=\"pic1\" src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"\"></img>"
+            return "<br><img class=\"pic1\" src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[0]+"\"></img>"
         }
         else if(mydata[i].p.split(',').length==2)
         {
@@ -42,7 +42,7 @@ function pics(mydata,i)/* 附属于上个函数 ，处理图片*/
             {
                 pics=pics+"<div class=\"pic2\"><img src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[x]+"\"></img></div>"
             }
-            return "<div class=\"pic2_con\">"+pics+"</div>"
+            return "<br><div class=\"pic2_con\">"+pics+"</div>"
         }
         else
         {
@@ -50,7 +50,7 @@ function pics(mydata,i)/* 附属于上个函数 ，处理图片*/
             {
                 pics=pics+"<div class=\"pic9\"><img src =\""+'https://atarsei.gitee.io/assets/images/'+mydata[i].p.split(',')[x]+"\"></img></div>"
             }
-            return "<div class=\"pic9_con\">"+pics+"</div>"
+            return "<br><div class=\"pic9_con\">"+pics+"</div>"
         }
     }
     else{return ""}
@@ -80,14 +80,15 @@ function LoadFrame()/* Out Of Time   <iframe name="nav" src="../assets/Module/na
 
 function PhotoStatus(tagname='img')
 {
-    function PhotoStatusII(object)
-    {
-        object.src=object.src.replace("https://atarsei.gitee.io","");
-        object.onerror=null
-    };
+
     var imgs=document.getElementsByTagName(tagname);  
     for (var i=0;i<imgs.length;i++)
     {
-        imgs[i].onerror=PhotoStatusII(imgs[i])
+        imgs[i].setAttribute('onerror','PhotoStatusII(this)')
     }
 }
+function PhotoStatusII(object)
+{
+    object.src=object.src.replace("https://atarsei.gitee.io","");
+    object.onerror=null;
+};
