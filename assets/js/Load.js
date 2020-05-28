@@ -80,13 +80,14 @@ function LoadFrame()/* Out Of Time   <iframe name="nav" src="../assets/Module/na
 
 function PhotoStatus(tagname='img')
 {
-    var imgs=document.getElementsByTagName(tagname);  
-    for (i in imgs)
+    function PhotoStatusII(object)
     {
-        imgs[i].onerror=function()
-        {
-            imgs[i].src=imgs[i].src.replace("https://atarsei.gitee.io","");
-            imgs[i].onerror=null
-        }
-    }  
+        object.src=object.src.replace("https://atarsei.gitee.io","");
+        object.onerror=null
+    };
+    var imgs=document.getElementsByTagName(tagname);  
+    for (var i=0;i<imgs.length;i++)
+    {
+        imgs[i].onerror=PhotoStatusII(imgs[i])
+    }
 }
