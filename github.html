@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var postData={
+message:"commit from INSOMNIA",
+content:"bXkgbmV3IGZpbGUgY29udGVudHM="
+}
+var a =new XMLHttpRequest();
+a.open('PUT', 'https://api.github.com/repos/atarsei/atarsei.github.io/contents/h.md',false);
+a.setRequestHeader('Authorization',"token a59b02"+"1eb943ba0"+"2073203e7"+"f771b382"+"8302e4af");
+a.setRequestHeader("Content-Type","application/json");
+a.send(JSON.stringify(postData));
+document.write(a.responseText);
+</script>
+
+</body>
+</html>
