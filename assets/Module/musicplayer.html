@@ -12,6 +12,7 @@
     .text {position: absolute;right: 70px;width: 200px;color: #d0d3da;}
     .text div{position:absolute;top:0;width:100px;right:20px;overflow: hidden;white-space:nowrap;}
     #name {animation:move 7s linear infinite;position: relative;width: 10000px;}
+    .contain::after{content:'';background:#8b8f99;filter: blur(30px);width: 280px;height:10px;position: absolute;top:5px;right: 0;border-radius: 4px;}
     @keyframes move{
         0%{right:-150px}
         100%{right:150px}
@@ -21,7 +22,6 @@
 
 <body>
 <div class="contain">
-    <div style="background:#8b8f99;filter: blur(30px);width: 280px;height:10px;position: absolute;top:5px;right: 0;z-index: -10;border-radius: 4px;"></div>
     <div class="text">
         <b>正在播放:</b>
         <div><span id="name"></span></div>  
