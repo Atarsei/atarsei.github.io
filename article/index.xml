@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <all>
+    <article id="随便写写">        <title>随便写写</title>        <summary>gvghvghjvgvghvghv</summary>        <label></label>        <date>            <year></year>            <month></month>            <day>06</day>        </date>    </article>
     <article>
         <title></title>
         <summary></summary>
@@ -8,6 +9,16 @@
             <year></year>
             <month></month>
             <day></day>
+        </date>
+    </article>
+    <article id="demo">
+        <title>demo</title>
+        <summary>text/template实现基于数据的文本化输出。功能和jsp、blade.php(laravel)一样，用于动态生成文件，只不过golang用于生产HTML的模块为html/template1</summary>
+        <label>demo,日常,其他</label>
+        <date>
+            <year>2020</year>
+            <month>06</month>
+            <day>07</day>
         </date>
     </article>
 </all>

@@ -92,3 +92,32 @@ function PhotoStatusII(object)
     object.src=object.src.replace("https://atarsei.gitee.io","");
     object.onerror=null;
 };
+
+function LoadXml(filename)
+{
+    var file = new XMLHttpRequest();
+    file.open("GET",filename,false);
+    file.send();
+    return file.responseXML;
+}
+function LoadXmlForPage()
+{
+    var filename=location.pathname.replace(/.*\//i,"").replace(/\..*/i,"");
+    var xml = LoadXml("../index.xml").getElementById(filename);
+    function xmlchild(name)
+    {return xml.getElementsByTagName(name)[0].innerHTML};
+    document.getElementsByClassName("side")[0].innerHTML=xmlchild('label');
+}
+function LoadXmlForIndex()
+{
+    var xmls=LoadXml("index.xml").getElementsByTagName("article");
+    function xmlchild(name)
+    {return xml.getElementsByTagName(name)[0].innerHTML}
+    var text='';
+    for (var i=0;i<xmls.length;i++)
+    {
+        var xml=xmls[i];
+        text=text+`<a href="/article/page/${xmlchild('title')}.html">${xmlchild('title')}</a><br>`;        
+    }
+    document.getElementsByClassName('main')[0].innerHTML=text
+}

@@ -6,16 +6,19 @@
   <title>文章</title>
   <link rel="icon" href="../assets/images/ui/任意.png">
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css">
+  <style>
+    .main{margin-top: 100px;}
+  </style>
 </head>
 <script type="text/javascript" src="../assets/js/Load.js"></script>
 
 <body>
   <div class="topmeau"></div>
-  <a href="tencent://message/?uin=2608822893&Site=http://vps.shuidazhe.com&Menu=yes">PC版</a>
-  <a href="mqqwpa://im/chat?chat_type=wpa&uin=2608822893&version=1&src_type=web&web_src=oicqzone.com">移动版</a>
+  <div class="main"></div>
   <script>LoadHtmlWrite("../assets/Module/nav.html", "topmeau")</script>
+  <script>LoadXmlForIndex()</script>
   <script>PhotoStatus()</script>
-  <iframe src="../assets/Module/musicplayer.html"
+  <iframe src="/assets/Module/musicplayer.html"
     style="position: fixed;right:0;top:60px;width:300px;height:40px;border-style:none;"></iframe>
 </body>
 

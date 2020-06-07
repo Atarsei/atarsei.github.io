@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
-    <link rel="stylesheet" href="/assets/css/base.css">
-    <style>
-        .a{width:1000px;position: relative;margin:0px auto;margin-top:100px;max-width: 100%;min-width: 40%;}
-        .article{background: white;width: 70%;height: 500px;float: left;position: relative;}
-        .side{background: gray;width: 30%;height: 100px;float: left;position: relative;}
-    </style>
-</head>
-<body>
-<div class="topmeau"></div>
-<div class="a">
-    <div class="article"></div>
-    <div class="side"></div>
-</div>
-<script src="/assets/js/Load.js"></script>
-<script>LoadHtmlWrite("/assets/Module/nav.html","topmeau")</script>
-</body>
-</html>
+<!DOCTYPE html><html lang='zh'><head>    <meta charset='UTF-8'>    <meta name='viewport' content='width=device-width, initial-scale=1.0'>    <title>无题</title>    <link rel='stylesheet' href='/assets/css/base.css'>    <link rel='stylesheet' href='/assets/css/article.css'></head><body>    <div class='topmeau'></div>    <div class='all'>        <div class='article'>            <div class="content">
+                概述
+                text/template实现基于数据的文本化输出。功能和jsp、blade.php(laravel)一样，用于动态生成文件，只不过golang用于生产HTML的模块为html/template1
+
+                运行过程
+                将template模板应用于结构化的数据，使用注解语法引用数据结构中的元素（struct中的feild或map中的key）并显示它们的值。template在执行过程中遍历数据结构并且设置当前光标（英文句号“.”标识）标识当前位置的元素（值）
+
+                一旦解析，模板可以安全地并行执行，但是如果并行执行共享Writer，则输出可以是交错的。
+                要求
+                template的文本必须为UTF-8编码。注解语法必须由“{{”和“}}”分隔，不在“{{”和“}}”的文本原样输出。一般来说注解语法不用另起一行，可以和非注解文本同行，不过如果是动态注释的话，注解语法还是建议另起一行。
+
+                运行过程
+                将template模板应用于结构化的数据，使用注解语法引用数据结构中的元素（struct中的feild或map中的key）并显示它们的值。template在执行过程中遍历数据结构并且设置当前光标（英文句号“.”标识）标识当前位置的元素（值）
+
+                一旦解析，模板可以安全地并行执行，但是如果并行执行共享Writer，则输出可以是交错的。
+                要求
+                template的文本必须为UTF-8编码。注解语法必须由“{{”和“}}”分隔，不在“{{”和“}}”的文本原样输出。一般来说注解语法不用另起一行，可以和非注解文本同行，不过如果是动态注释的话，注解语法还是建议另起一行。
+
+            </div>        </div><div class='space'></div><div class='side'></div></div><script src='/assets/js/Load.js'></script><script>LoadHtmlWrite('/assets/Module/nav.html', 'topmeau')</script><script>LoadXmlForPage()</script><script>PhotoStatus()</script><iframe src='/assets/Module/musicplayer.html' style='position: fixed;right:0;top:60px;width:300px;height:40px;border-style:none;'></iframe></body></html>
