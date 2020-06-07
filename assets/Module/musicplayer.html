@@ -8,11 +8,11 @@
 <style>
     body{background-color: rgba(255, 255, 255, 0);}
     i{color: #d0d3da;}
-    .contain {position: absolute;right: 1%;text-shadow:0px 0px 4px  #a5a8af;}
+    .contain {position: absolute;right: 1%;text-shadow:0px 0px 4px  #a5a8af;opacity: 0.9;}
     .text {position: absolute;right: 70px;width: 200px;color: #d0d3da;}
     .text div{position:absolute;top:0;width:100px;right:20px;overflow: hidden;white-space:nowrap;}
     #name {animation:move 7s linear infinite;position: relative;width: 10000px;}
-    .contain::after{content:'';background:#8b8f99;filter: blur(30px);width: 280px;height:10px;position: absolute;top:5px;right: 0;border-radius: 4px;}
+    .contain::after{content:'';background:#8b8f99;filter: blur(30px);width: 280px;height:10px;position: absolute;top:5px;right: 0;border-radius: 4px;z-index: -1;}
     @keyframes move{
         0%{right:-150px}
         100%{right:150px}

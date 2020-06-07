@@ -7,14 +7,22 @@
   <link rel="icon" href="../assets/images/ui/任意.png">
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css">
   <style>
-    .main{margin-top: 100px;}
+    .main{background-color: rgba(255, 255, 255, 0.342);margin: 0 auto;width: 70vw;min-width:400px;margin-top: 100px;padding: 20px;}
+    .main h1{text-align: center;color:#d0d3da}
+    .main a{display:inline-block;text-decoration: none;background-color:rgb(94, 111, 143);padding: 10px;border-radius: 20px;margin-bottom: 7px;color:#d0d3da;margin:0.5vw;}
+    .main a:hover{background-color:rgb(118, 140, 182);}
+    .contain{float: left;}
   </style>
 </head>
 <script type="text/javascript" src="../assets/js/Load.js"></script>
 
 <body>
   <div class="topmeau"></div>
-  <div class="main"></div>
+  <div class="main">
+    <h1>文章</h1>
+    <div class="contain"></div><br><br>
+    <hr></hr>
+  </div>
   <script>LoadHtmlWrite("../assets/Module/nav.html", "topmeau")</script>
   <script>LoadXmlForIndex()</script>
   <script>PhotoStatus()</script>
