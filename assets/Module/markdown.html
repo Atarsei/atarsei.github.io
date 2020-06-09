@@ -7,9 +7,9 @@
 <body>
   <div id="content"></div>
   <script src="\assets\js\node_modules\marked/marked.min.js"></script>
+  <script src="/assets/js/Load.js"></script>
   <script>
-    var text ='- [ ] article的界面设计\
-    \n- [ ] article的界面设计'
+    var text =LoadFile("/article/markdown/关于.md");
     document.getElementById('content').innerHTML =
       marked(text);
   </script>

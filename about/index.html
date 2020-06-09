@@ -9,9 +9,16 @@
 <script type="text/javascript" src="../assets/js/Load.js"></script>
 <body>
 	<div class="topmeau"></div><br><br><br>
-	<img src="https://atarsei.gitee.io/assets/images/敏感多情的戏精.png" alt="">
 	<script>LoadHtmlWrite("../assets/Module/nav.html","topmeau")</script>
 	<script>PhotoStatus()</script>
 	<iframe src="../assets/Module/musicplayer.html" style="position: fixed;right:0;top:60px;width:300px;height:40px;border-style:none;"></iframe>
+	<div class="content" style="opacity: ;font-size:medium;letter-spacing: normal;margin:0 auto;width: 50vw;min-width: 500px;"></div>
+	<script src="\assets\js\node_modules\marked/marked.min.js"></script>
+	<script src="/assets/js/Load.js"></script>
+	<script>
+	  var text =LoadFile("/article/markdown/关于.md");
+	  document.getElementsByClassName('content')[0].innerHTML =
+		marked(text);
+	</script>
 </body>
 </html>
