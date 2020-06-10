@@ -2,8 +2,19 @@ body {margin: 0;width: 100%;background-color:#5e6578}
 .content {overflow: hidden;letter-spacing: 20px;
 font-size: 50px;color: #d0d3da}
 .topmeau {overflow:hidden;}
+.topmeau .top_btn {display: none;}
 .topmeau ul{overflow: hidden;margin: 0;padding: 0;width: 100%;background:#585f6f;position: fixed;z-index: 10;box-shadow:5px 5px 10px #4d5361;}
 .topmeau li{list-style-type: none;float: right;background-color:#585f6f;position: relative;right:10px}
 .topmeau  li a{color:#d0d3da; display: inline-block;text-decoration: none;padding: 20px;}
 .topmeau li :hover{background-color:#9194A5}
 ::-webkit-scrollbar{display:none;}
+@media screen and (max-width:800px)
+{
+    iframe{display: none;}
+    .topmeau ul{display:none;}
+    .topmeau li{float: none;left: 5px;}
+    .topmeau li a{display: block;}
+    .topmeau .top_btn{display:grid;background: #585f6f;width: 15vw;height: 15vw;position: fixed;top:83vh;left:10px;border-radius: 50%;box-shadow: 0 0 10px #484d5a;}
+    .topmeau .top_btn:hover{background-color: #9194A5;box-shadow: 0 0 10px rgb(124, 126, 141)}
+    .topmeau .top_btn b{justify-self: center;font-size:10.5vw;color: #d0d3da;text-shadow:0 0 3px #d0d3da;}
+}

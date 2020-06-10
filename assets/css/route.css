@@ -9,3 +9,9 @@ background-color:#b8bcca;width:500px;box-shadow:0px 0px 1000px #9a9eb9;}
 .route_card_content .pic2_con{display:grid;grid-template-columns:1fr 1fr 1fr;width:100%;text-align: center;}
 .route_card_content .pic2{overflow: hidden;margin: 5px;padding: 0;width:240px;height:240px;position: relative;}
 .route_card_content .pic2 img{position: absolute;transform:translate(-50%,-50%);top:50%;left:50% ;min-width: 100%;min-height: 100%;width: 100%;}
+@media screen and (max-width:800px)
+{
+    .route_card{width: 90vw;}
+    .route_card_content .pic2{margin: 4px;width:44vw;height:44vw}
+    .route_card_content .pic9{margin: 2px;width:29vw;height:29vw;}
+}

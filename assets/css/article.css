@@ -3,3 +3,8 @@
 .side{background: #9194a5d2;width: 29%;height: 100px;float: left;}
 .space{width: 1%;height: 10px;float: left;}
 .content{padding: 20px;padding-top: 30px;font-size: medium;letter-spacing: normal;}
+@media screen and (max-width:800px)
+{
+    .side,.space{display: none;}
+    .article{float: none;width: 85vw;margin: 0 auto;}
+}

@@ -122,3 +122,11 @@ function LoadXmlForIndex()
     }
     document.getElementsByClassName('contain')[0].innerHTML=text
 }
+var top_btn_mode="close";
+function topmeau(e)
+{
+    if(top_btn_mode=="close")
+    {e.parentNode.children[1].style.display="inline";top_btn_mode="open"}
+    else
+    {e.parentNode.children[1].style.display="none";top_btn_mode="close"}
+}
